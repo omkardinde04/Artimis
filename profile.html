@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Zeus' Healing Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        .profile {
+            text-align: center;
+            padding: 40px;
+            background-color: #ffffffbf;
+            margin: 40px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-image: url('doc_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #editForm label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #editForm input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+    <header>
+        <h1>Zeus' Healing Ledger</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile">
+            <h2>Enter Your Health Profile</h2>
+            <div id="editForm">
+                <label for="editName">Name:</label>
+                <input type="text" id="editName" required>
+
+                <label for="editAge">Age:</label>
+                <input type="number" id="editAge" min="1" max="120" required>
+
+                <label for="editWeight">Weight (kg):</label>
+                <input type="number" id="editWeight" min="1" max="500" required>
+
+                <label for="editTemperature">Temperature (°F):</label>
+                <input type="text" id="editTemperature" required>
+
+                <button id="saveProfile">Save Profile</button>
+            </div>
+        </section>
+
+        <script>
+            const saveButton = document.getElementById('saveProfile');
+            saveButton.addEventListener('click', function() {
+                const name = document.getElementById('editName').value;
+                const age = document.getElementById('editAge').value;
+                const weight = document.getElementById('editWeight').value;
+                const temp = document.getElementById('editTemperature').value;
+
+                if (name && age && weight && temp) {
+                    localStorage.setItem('patientName', name);
+                    localStorage.setItem('age', age);
+                    localStorage.setItem('weight', weight);
+                    localStorage.setItem('temperature', temp);
+
+                    alert('Profile updated successfully!');
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #bg_img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the whole area */
+            z-index: -1; /* Sends the image behind other elements */
+        }
+        body {
+            font-family: Algerian;
+            margin: 0;
+            padding: 0;
+            background-color: #91adb7;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-section {
+            display: flex;
+            width: 700px;
+            height: 350px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .login-box, .info-box {
+            flex: 1;
+            padding: 30px;
+        }
+        .login-box {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-box .forgot-password {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .login-box .forgot-password a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .login-box .login-btn {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4ea8be;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info-box {
+            background-color: #4ea8be;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+        }
+        .info-box h2 {
+            padding-top: 0px;
+            padding-bottom:20px ;
+            margin-bottom: 20px;
+        }
+        .info-box p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .info-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .info-box .forgot-password {
+            margin-top: 10px;
+            margin-left: 49%;
+            text-align: right;
+        }
+        .info-box .forgot-password a {
+            color: #f8f8f8;
+            text-decoration: none;
+        }
+        #login-button {
+            margin-top: 33.1px;
+            padding-right: 45%;
+            padding-left: 45%;
+            padding-top: 3%;
+            padding-bottom: 3%; 
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info-box {
+            display: flex;
+            width: 700px;
+            height: 350px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <img src="bg_img.jpeg" id="bg_img">
+    <div class="container">
+        <div class="login-section">
+            <!-- Login Box -->
+            <div class="login-box">
+                <h2>Signup </h2>
+                <input type="text" id="username" placeholder="Enter Username or Email" required>
+                <input type="password" id="password" placeholder="Create Password" required>
+                <input type="password" id="password" placeholder="Confirm Password" required>
+                
+                <br>
+                <button id="login-btn" class="login-btn">Signup</button>
+
+                <script type="text/javascript">
+                    document.getElementById("login-btn").onclick = function (event) {
+                        // Get the input values
+                        var username = document.getElementById("username").value;
+                        var password = document.getElementById("password").value;
+
+                        // Check if both fields are filled
+                        if (username === "" || password === "") {
+                            alert("Please fill in both the Username/Email and Password fields.");
+                        } else {
+                            // Redirect to the index page if fields are filled
+                            location.href = "index.html";
+                        }
+                    };
+                </script>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <h2>Login as Doctor</h2>
+                <input type="text" id="user_name" placeholder="Enter Username or Email" required>
+                <input type="password" id="pass_word" placeholder="Enter Password" required>
+                <div class="forgot-password">
+                    <a href="#">New user?</a>
+                </div>
+                <button id="login-button" class="login-button">Login</button>
+
+                <script type="text/javascript">
+                    document.getElementById("login-button").onclick = function (event) {
+                        // Get the input values
+                        var username = document.getElementById("user_name").value;
+                        var password = document.getElementById("pass_word").value;
+
+                        // Check if both fields are filled
+                        if (username === "" || password === "") {
+                            alert("Please fill in both the Username/Email and Password fields.");
+                        } else {
+                            // Redirect to the doctor page if fields are filled
+                            location.href = "doctor.html";
+                        }
+                    };
+                </script>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
